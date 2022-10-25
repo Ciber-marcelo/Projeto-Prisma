@@ -6,11 +6,13 @@ generator client {
 }
 
 datasource db {
+  //estou usando o "sqlite" por se o mais basico e facil de mexer, mas eu poderia usar mySQL, sql server e etc
   provider = "sqlite"
   url      = env("DATABASE_URL")
 }
 
 model User {
+  //"@default(uuid)" adiciona o id automaticamente na tabela
   id String @id @default(uuid()) 
   email String @unique
   name String

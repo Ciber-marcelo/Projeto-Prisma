@@ -1,3 +1,4 @@
+//copiado da documentação do prisma, serve para evitar erros
 {
    "compilerOptions": {
     "sourceMap": true,

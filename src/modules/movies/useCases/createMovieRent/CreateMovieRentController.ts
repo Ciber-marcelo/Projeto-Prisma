@@ -1,0 +1,15 @@
+import { Request, Response } from "express";
+import { CreateMovieRentUseCase } from "./CreateMovieRentUseCase";
+
+export class CreateMovieRentController {
+    async handle(req: Request, res: Response) {
+        const { movieId, userId } = req.body;
+
+        const createMovieRentUseCase = new CreateMovieRentUseCase();
+
+        await createMovieRentUseCase.execute({ movieId, userId });
+
+        //".send()" ta aqui pq n estou usando ".json()", e precisa de um deles par aenviar
+        return res.status(201).send();
+    }
+}
