@@ -16,7 +16,7 @@ export class CreateUserUseCase {
 
         if (userAlreadyExists) {
             //aqui estamos chamando o erro q criamos na pasta "errors"
-            throw new AppError("Usuário já existe!")
+            throw new AppError("Usuário já existe!", 404)
         }
 
         //criando um usuario(aula 02, 05:30)
